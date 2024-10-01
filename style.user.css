@@ -1,17 +1,10 @@
 /* ==UserStyle==
 @name         SAP Community
-@version      20241001.19.46
+@version    1.0.0
 @namespace    https://userstyles.world/user/marianfoo
 @description  Improves reading experience with SAP Community
 @author       marianfoo
 @license      No License
-==/UserStyle== */
-
-/* ==UserStyle==
-@name       SAP Community
-@namespace  userstyles.world
-@version    1.0.0
-@description Custom styles for SAP Community to hide elements and adjust layout.
 ==/UserStyle== */
 
 @-moz-document domain("sap.com"), regexp(".*") {
@@ -42,7 +35,7 @@
     }
 
     p {
-        margin: 0 0 6.5px !important;
+        margin: 0 0 7px !important;
     }
 
     .lia-thread-topic:not(.lia-list-row-thread-solved) .lia-quilt-layout-custom-message .lia-message-body-content, 
