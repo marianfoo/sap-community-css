@@ -1,15 +1,13 @@
 /* ==UserStyle==
 @name         SAP Community
-@version    1.0.0
+@version      20241004.06.50
 @namespace    https://userstyles.world/user/marianfoo
 @description  Improves reading experience with SAP Community
 @author       marianfoo
 @license      No License
 ==/UserStyle== */
 
-@-moz-document domain("sap.com"),
-regexp(".*") {
-    /* Replace example.com with the actual domain of the target website. */
+@-moz-document domain("community.sap.com") {
     #boardmanagementtaplet {
         display: none !important;
     }
@@ -81,7 +79,7 @@ regexp(".*") {
             }
         }
     }
-    
+
 
     /*   I actually like the default line height makes it a bit better readable than being too squashed together
     .lia-thread-topic:not(.lia-list-row-thread-solved) .lia-quilt-layout-custom-message .lia-message-body-content, 
