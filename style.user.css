@@ -7,9 +7,9 @@
 @license      No License
 ==/UserStyle== */
 
-@-moz-document domain("sap.com"), regexp(".*") {
-/* Replace example.com with the actual domain of the target website. */
-
+@-moz-document domain("sap.com"),
+regexp(".*") {
+    /* Replace example.com with the actual domain of the target website. */
     #boardmanagementtaplet {
         display: none !important;
     }
@@ -19,16 +19,16 @@
     }
 
     @media (min-width: 1024px) {
-        .lia-quilt-column-16, 
+        .lia-quilt-column-16,
         .lia-quilt-view-profile-hero .lia-quilt-column-profile-hero-center {
             width: 100% !important;
         }
     }
 
     @media (min-width: 1024px) {
-        .lia-quilt-column-08, 
-        .KudosLeaderboardPage .TopUsersLeaderBoard .UserSearchItemContainer, 
-        .lia-user-search-results-list-container > .UserSearchItemContainer, 
+        .lia-quilt-column-08,
+        .KudosLeaderboardPage .TopUsersLeaderBoard .UserSearchItemContainer,
+        .lia-user-search-results-list-container > .UserSearchItemContainer,
         .TkbPage .lia-tkb-article-entry {
             width: 100% !important;
         }
@@ -38,9 +38,55 @@
         margin: 0 0 7px !important;
     }
 
+    #producttaglist {
+        display: none !important;
+    }
+
+    /* remove 'Add tags' section */
+    .AddMessageTags.lia-message-tags.lia-component-message-view-widget-tags {
+        display: none !important;
+    }
+
+    /* get rid of crazy space above the kudos button */
+    #kudosButtonV2 {
+        margin-top: unset !important;
+    }
+    /* there is also some wild margin going on in the bottom side of blog posts */
+    #bodyDisplay {
+        margin-bottom: unset !important;
+    }
+
+    /* 
+       take care of the little date + dropdown, align them, move them inline and make 
+       the font size in there fit so that the icon doesn't look out of place
+       also: make sure to not mess with the comment buttons' container
+    */
+    .lia-quilt-column-alley.lia-quilt-column-alley-right:not(:has(#commentOnThis)) {
+        display: flex;
+        justify-content: right;
+        flex-direction: row-reverse;
+        font-size: small;
+        .lia-menu-navigation-wrapper.lia-menu-action.lia-component-message-view-widget-action-menu {
+            margin: 0 1rem;
+        }
+    }
+
+    /* center the comment button; also ensure that the footer takes up full width in small screens (in this case, always) */
+    .lia-quilt-column.lia-quilt-column-16.lia-quilt-column-right.lia-quilt-column-message-footer-right {
+        width: 100% !important;
+        .lia-quilt-column-alley.lia-quilt-column-alley-right {
+            text-align: center !important;
+            .footer-top {
+                width: 100% !important;
+            }
+        }
+    }
+    
+
+    /*   I actually like the default line height makes it a bit better readable than being too squashed together
     .lia-thread-topic:not(.lia-list-row-thread-solved) .lia-quilt-layout-custom-message .lia-message-body-content, 
     .lia-quilt-layout-custom-message .lia-message-body-content, 
     .lia-thread-topic .lia-quilt-layout-custom-message .lia-message-body-content {
         line-height: 16px !important;
-    }
+    } */
 }
