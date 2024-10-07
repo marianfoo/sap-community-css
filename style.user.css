@@ -59,15 +59,22 @@
        the font size in there fit so that the icon doesn't look out of place
        also: make sure to not mess with the comment buttons' container
     */
-    .lia-quilt-column-alley.lia-quilt-column-alley-right:not(:has(#commentOnThis)) {
+    .lia-quilt-column-alley.lia-quilt-column-alley-right {
         display: flex;
         justify-content: right;
         flex-direction: row-reverse;
         font-size: small;
-        .lia-menu-navigation-wrapper.lia-menu-action.lia-component-message-view-widget-action-menu {
-            margin: 0 1rem;
-        }
     }
+
+    /* Exclude styling for elements inside a notification feed item */
+    .lia-quilt-notification-feed-item .lia-quilt-column-alley.lia-quilt-column-alley-right {
+        display: block;
+        justify-content: initial;
+        flex-direction: initial;
+        font-size: initial;
+        margin: initial;
+    }
+
 
     /* center the comment button; also ensure that the footer takes up full width in small screens (in this case, always) */
     .lia-quilt-column.lia-quilt-column-16.lia-quilt-column-right.lia-quilt-column-message-footer-right {
