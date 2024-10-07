@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         SAP Community CSS Modifier
 // @namespace    http://tampermonkey.net/
-// @version      2024-10-07
+// @version      v0.1.2
 // @description  Modify layout and styling on SAP Community pages
-// @author       You
+// @author       Marian
 // @homepage     https://github.com/marianfoo/sap-community-css/blob/main/tampermonkey.js
 // @updateURL    https://raw.githubusercontent.com/marianfoo/sap-community-css/main/tampermonkey.js
 // @downloadURL  https://raw.githubusercontent.com/marianfoo/sap-community-css/main/tampermonkey.js
