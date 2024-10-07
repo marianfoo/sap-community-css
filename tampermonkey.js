@@ -8,6 +8,7 @@
 // @updateURL    https://raw.githubusercontent.com/marianfoo/sap-community-css/main/tampermonkey.js
 // @downloadURL  https://raw.githubusercontent.com/marianfoo/sap-community-css/main/tampermonkey.js
 // @match        https://community.sap.com/*
+// @exclude      https://community.sap.com/t5/forums/editpage*
 // @grant        none
 // @license      MIT
 // ==/UserScript==
