@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SAP Community CSS Modifier
 // @namespace    http://tampermonkey.net/
-// @version      v0.1.6
+// @version      v0.1.7
 // @description  Modify layout and styling on SAP Community pages
 // @author       Marian
 // @homepage     https://github.com/marianfoo/sap-community-css/blob/main/tampermonkey.js
@@ -16,12 +16,10 @@
 (function () {
   'use strict';
 
-  // Create a style element to hold the custom CSS
-  const style = document.createElement('style');
-  style.type = 'text/css';
-
-  // Insert the provided CSS into the style element
-  style.innerHTML = `
+   const style = new CSSStyleSheet();
+  
+   // insert the CSS into the stylesheet
+   style.replaceSync( `
         #boardmanagementtaplet {
             display: none !important;
         }
@@ -90,10 +88,10 @@
                 }
             }
         }
-    `;
+    `);
 
-  // Append the style element to the document header
-  document.head.appendChild(style);
+  // add the styles to the document
+  document.adoptedStyleSheets.push(style);
 
   // Think of the scene in Shaun Of The Dead when Philip, having turned
   // into a zombie in the car, and is still bothered by the loud music,
