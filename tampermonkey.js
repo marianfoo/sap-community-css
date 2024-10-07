@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SAP Community CSS Modifier
 // @namespace    http://tampermonkey.net/
-// @version      v0.1.3
+// @version      v0.1.4
 // @description  Modify layout and styling on SAP Community pages
 // @author       Marian
 // @homepage     https://github.com/marianfoo/sap-community-css/blob/main/tampermonkey.js
@@ -90,6 +90,6 @@
         }
     `;
 
-    // Append the style element to the document
+    // Append the style element to the document header
     document.head.appendChild(style);
 })();
