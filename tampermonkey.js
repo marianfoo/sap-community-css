@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SAP Community CSS Modifier
 // @namespace    http://tampermonkey.net/
-// @version      v0.1.5
+// @version      v0.1.6
 // @description  Modify layout and styling on SAP Community pages
 // @author       Marian
 // @homepage     https://github.com/marianfoo/sap-community-css/blob/main/tampermonkey.js
@@ -12,15 +12,15 @@
 // @license      MIT
 // ==/UserScript==
 
-(function() {
-    'use strict';
+(function () {
+  'use strict';
 
-    // Create a style element to hold the custom CSS
-    const style = document.createElement('style');
-    style.type = 'text/css';
+  // Create a style element to hold the custom CSS
+  const style = document.createElement('style');
+  style.type = 'text/css';
 
-    // Insert the provided CSS into the style element
-    style.innerHTML = `
+  // Insert the provided CSS into the style element
+  style.innerHTML = `
         #boardmanagementtaplet {
             display: none !important;
         }
@@ -91,6 +91,56 @@
         }
     `;
 
-    // Append the style element to the document header
-    document.head.appendChild(style);
+  // Append the style element to the document header
+  document.head.appendChild(style);
+
+  // Think of the scene in Shaun Of The Dead when Philip, having turned
+  // into a zombie in the car, and is still bothered by the loud music,
+  // manages to turn it off by reaching over to the front console, before
+  // emitting a zombie sigh of relief ...
+  // https://www.youtube.com/watch?v=L5pTPWnoq74&t=229s
+  const blogpostify = (x) => x.replace(/Blogs|blogs/g, 'Blog Posts');
+
+  document.title = blogpostify(document.title);
+
+  const headertitle = document.getElementsByClassName(
+    'lia-node-header-title'
+  )[0];
+  headertitle.textContent = blogpostify(headertitle.textContent);
+
+  // Function to loop through elements and apply blogpostify if "Blogs" or "blogs" is found
+  const replaceBlogsInElements = (className) => {
+    const elements = document.getElementsByClassName(className);
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i];
+      if (/Blogs|blogs/.test(element.textContent)) {
+        element.textContent = blogpostify(element.textContent);
+      }
+    }
+  };
+
+  // Check for 'lia-breadcrumb-forum', 'custom-tile-category-board', and 'lia-node-header-description'
+  replaceBlogsInElements('lia-breadcrumb-forum');
+  replaceBlogsInElements('custom-tile-category-board');
+  replaceBlogsInElements('lia-node-header-description');
+
+  // Target the 'custom-tiled-node-navigation' section
+  const customTileNavigation = document.querySelectorAll(
+    '.custom-tiled-node-navigation h3 a'
+  );
+  customTileNavigation.forEach((link) => {
+    if (/Blogs|blogs/.test(link.textContent)) {
+      link.textContent = blogpostify(link.textContent);
+    }
+  });
+
+  // Check for 'lia-breadcrumb-forum', 'custom-tile-category-board', and 'lia-node-header-description'
+  replaceBlogsInElements('lia-breadcrumb-forum');
+  replaceBlogsInElements('custom-tile-category-board');
+  replaceBlogsInElements('lia-node-header-description');
+
+  // Check for 'lia-breadcrumb-forum', 'custom-tile-category-board', and 'lia-node-header-description'
+  replaceBlogsInElements('lia-breadcrumb-forum');
+  replaceBlogsInElements('custom-tile-category-board');
+  replaceBlogsInElements('lia-node-header-description');
 })();
