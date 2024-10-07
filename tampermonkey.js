@@ -93,4 +93,15 @@
 
     // Append the style element to the document header
     document.head.appendChild(style);
+
+    // Think of the scene in Shaun Of The Dead when Philip, having turned
+    // into a zombie in the car, and is still bothered by the loud music,
+    // manages to turn it off by reaching over to the front console, before
+    // emitting a zombie sigh of relief ...
+    // https://www.youtube.com/watch?v=L5pTPWnoq74&t=229s
+    const blogpostify = x => x.replace('Blogs', 'Blog Posts')
+    document.title = blogpostify(document.title)
+    const headertitle=document.getElementsByClassName('lia-node-header-title')[0]
+    headertitle.textContent = blogpostify(headertitle.textContent)
+
 })();
