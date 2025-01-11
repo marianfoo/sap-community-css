@@ -67,9 +67,6 @@
         }
 
         .lia-quilt-column-alley.lia-quilt-column-alley-right {
-            display: flex;
-            justify-content: right;
-            flex-direction: row-reverse;
             font-size: small;
         }
 
