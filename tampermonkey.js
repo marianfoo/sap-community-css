@@ -43,7 +43,7 @@
             .lia-user-search-results-list-container > .UserSearchItemContainer,
             .TkbPage .lia-tkb-article-entry {
                 width: 100% !important;
-                margin-top: -3%; /* offset back inline with avatar */
+                margin-top: -2%; /* offset back inline with avatar */
             }
         }
 
