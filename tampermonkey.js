@@ -43,6 +43,7 @@
             .lia-user-search-results-list-container > .UserSearchItemContainer,
             .TkbPage .lia-tkb-article-entry {
                 width: 100% !important;
+                margin-top: -2%; /* offset back inline with avatar */
             }
         }
 
@@ -67,9 +68,6 @@
         }
 
         .lia-quilt-column-alley.lia-quilt-column-alley-right {
-            display: flex;
-            justify-content: right;
-            flex-direction: row-reverse;
             font-size: small;
         }
 
